@@ -12,29 +12,14 @@ import PyPDF2
 
 import glob
 from gtts import gTTS
+import os
 
-def text_to_speech(text, tld):
-    
-    tts = gTTS(text,"es", tld, slow=False)
-    try:
-        my_file_name = text[0:20]
-    except:
-        my_file_name = "audio"
-    tts.save(f"temp/{my_file_name}.mp3")
-    return my_file_name, text
-
-def remove_files(n):
-    mp3_files = glob.glob("temp/*mp3")
-    if len(mp3_files) != 0:
-        now = time.time()
-        n_days = n * 86400
-        for f in mp3_files:
-            if os.stat(f).st_mtime < now - n_days:
-                os.remove(f)
-                print("Deleted ", f)
+try:
+    os.mkdir("temp")
+except:
+    pass
 
 
-remove_files(7)
 
 st.title('Que deseas Saber de IM ? 💬')
 ke = st.text_input('Ingresa tu Clave')
@@ -87,6 +72,29 @@ if user_question:
           st.markdown(f"## Tú audio:")
           st.audio(audio_bytes, format="audio/mp3", start_time=0)
 
+
+           def text_to_speech(text, tld):
+                
+                tts = gTTS(text,"es", tld, slow=False)
+                try:
+                    my_file_name = text[0:20]
+                except:
+                    my_file_name = "audio"
+                tts.save(f"temp/{my_file_name}.mp3")
+                return my_file_name, text
+            
+           def remove_files(n):
+                mp3_files = glob.glob("temp/*mp3")
+                if len(mp3_files) != 0:
+                    now = time.time()
+                    n_days = n * 86400
+                    for f in mp3_files:
+                        if os.stat(f).st_mtime < now - n_days:
+                            os.remove(f)
+                            print("Deleted ", f)
+            
+            
+            remove_files(7)
 
 
 
