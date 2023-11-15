@@ -77,7 +77,7 @@ if user_question:
                 return my_file_name, text
 
     
-        if st.button("convertir"):
+        if st.button("Escuchar"):
           result, output_text = text_to_speech(response, 'es')
           audio_file = open(f"temp/{result}.mp3", "rb")
           audio_bytes = audio_file.read()
