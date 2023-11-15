@@ -12,7 +12,17 @@ import PyPDF2
 
 from gtts import gTTS
 
-st.title('Chatea con tu PDF 💬')
+def text_to_speech(text, tld):
+    
+    tts = gTTS(text,"es", tld, slow=False)
+    try:
+        my_file_name = text[0:20]
+    except:
+        my_file_name = "audio"
+    tts.save(f"temp/{my_file_name}.mp3")
+    return my_file_name, text
+
+st.title('Que deseas Saber de IM ? 💬')
 ke = st.text_input('Ingresa tu Clave')
 #os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 os.environ['OPENAI_API_KEY'] = ke
