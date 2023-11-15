@@ -73,7 +73,7 @@ if user_question:
           st.audio(audio_bytes, format="audio/mp3", start_time=0)
 
 
-           def text_to_speech(text, tld):
+          def text_to_speech(text, tld):
                 
                 tts = gTTS(text,"es", tld, slow=False)
                 try:
@@ -83,7 +83,7 @@ if user_question:
                 tts.save(f"temp/{my_file_name}.mp3")
                 return my_file_name, text
             
-           def remove_files(n):
+          def remove_files(n):
                 mp3_files = glob.glob("temp/*mp3")
                 if len(mp3_files) != 0:
                     now = time.time()
@@ -94,7 +94,7 @@ if user_question:
                             print("Deleted ", f)
             
             
-            remove_files(7)
+           remove_files(7)
 
 
 
