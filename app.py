@@ -81,7 +81,7 @@ if user_question:
         st.write(response)
 
         if st.button("convertir"):
-          result, output_text = text_to_speech(text, tld)
+          result, output_text = text_to_speech(text, 'es')
           audio_file = open(f"temp/{result}.mp3", "rb")
           audio_bytes = audio_file.read()
           st.markdown(f"## Tú audio:")
