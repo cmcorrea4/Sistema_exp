@@ -56,7 +56,7 @@ if user_question:
           print(cb)
         st.write(response)
 
-        tld='com.mx'
+        tld='es'
         tts = gTTS(response,"es", tld, slow=False)
         result, output_text = text_to_speech(response, tld)
         audio_file = open(f"temp/{result}.mp3", "rb")
