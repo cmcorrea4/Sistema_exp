@@ -80,12 +80,12 @@ if user_question:
           print(cb)
         st.write(response)
 
-    if st.button("convertir"):
-       result, output_text = text_to_speech(text, tld)
-       audio_file = open(f"temp/{result}.mp3", "rb")
-       audio_bytes = audio_file.read()
-       st.markdown(f"## Tú audio:")
-       st.audio(audio_bytes, format="audio/mp3", start_time=0)
+       if st.button("convertir"):
+          result, output_text = text_to_speech(text, tld)
+          audio_file = open(f"temp/{result}.mp3", "rb")
+          audio_bytes = audio_file.read()
+          st.markdown(f"## Tú audio:")
+          st.audio(audio_bytes, format="audio/mp3", start_time=0)
 
 
 
