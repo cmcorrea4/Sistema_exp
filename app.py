@@ -8,10 +8,10 @@ from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
 from langchain.callbacks import get_openai_callback
-
-#import pickle5 as pickle
-#from pathlib import Path
 import PyPDF2
+
+from gtts import gTTS
+
 st.title('Chatea con tu PDF 💬')
 ke = st.text_input('Ingresa tu Clave')
 #os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
@@ -55,3 +55,13 @@ if user_question:
           response = chain.run(input_documents=docs, question=user_question)
           print(cb)
         st.write(response)
+
+        tld='com.mx'
+        tts = gTTS(response,"es", tld, slow=False)
+        result, output_text = text_to_speech(response, tld)
+        audio_file = open(f"temp/{result}.mp3", "rb")
+        audio_bytes = audio_file.read()
+        st.markdown(f"## Escucha:")
+        st.audio(audio_bytes, format="audio/mp3", start_time=0)
+
+
