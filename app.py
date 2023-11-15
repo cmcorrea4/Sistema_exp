@@ -10,6 +10,7 @@ from langchain.llms import OpenAI
 from langchain.callbacks import get_openai_callback
 import PyPDF2
 
+import glob
 from gtts import gTTS
 
 def text_to_speech(text, tld):
@@ -21,6 +22,19 @@ def text_to_speech(text, tld):
         my_file_name = "audio"
     tts.save(f"temp/{my_file_name}.mp3")
     return my_file_name, text
+
+def remove_files(n):
+    mp3_files = glob.glob("temp/*mp3")
+    if len(mp3_files) != 0:
+        now = time.time()
+        n_days = n * 86400
+        for f in mp3_files:
+            if os.stat(f).st_mtime < now - n_days:
+                os.remove(f)
+                print("Deleted ", f)
+
+
+remove_files(7)
 
 st.title('Que deseas Saber de IM ? 💬')
 ke = st.text_input('Ingresa tu Clave')
