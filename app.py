@@ -68,7 +68,7 @@ if user_question:
 
         def text_to_speech(text, tld):
                 
-                tts = gTTS(response,"es", "com.mx", slow=False)
+                tts = gTTS(response,"es", tld , slow=False)
                 try:
                     my_file_name = text[0:20]
                 except:
