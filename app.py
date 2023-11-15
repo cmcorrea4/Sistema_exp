@@ -65,15 +65,7 @@ if user_question:
           print(cb)
         st.write(response)
 
-        if st.button("convertir"):
-          result, output_text = text_to_speech(text, 'es')
-          audio_file = open(f"temp/{result}.mp3", "rb")
-          audio_bytes = audio_file.read()
-          st.markdown(f"## Tú audio:")
-          st.audio(audio_bytes, format="audio/mp3", start_time=0)
-
-
-          def text_to_speech(text, tld):
+        def text_to_speech(text, tld):
                 
                 tts = gTTS(text,"es", tld, slow=False)
                 try:
@@ -82,6 +74,17 @@ if user_question:
                     my_file_name = "audio"
                 tts.save(f"temp/{my_file_name}.mp3")
                 return my_file_name, text
+
+    
+        if st.button("convertir"):
+          result, output_text = text_to_speech(text, 'es')
+          audio_file = open(f"temp/{result}.mp3", "rb")
+          audio_bytes = audio_file.read()
+          st.markdown(f"## Tú audio:")
+          st.audio(audio_bytes, format="audio/mp3", start_time=0)
+
+
+
             
           def remove_files(n):
                 mp3_files = glob.glob("temp/*mp3")
