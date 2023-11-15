@@ -28,25 +28,25 @@ pdfReader = PyPDF2.PdfReader(pdfFileObj)
 
    # extract the text
 #if pdf is not None:
- from langchain.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import CharacterTextSplitter
  #pdf_reader = PdfReader(pdf)
- pdf_reader  = PyPDF2.PdfReader(pdfFileObj)
- text = ""
- for page in pdf_reader.pages:
+pdf_reader  = PyPDF2.PdfReader(pdfFileObj)
+text = ""
+for page in pdf_reader.pages:
          text += page.extract_text()
 
    # split into chunks
- text_splitter = CharacterTextSplitter(separator="\n",chunk_size=500,chunk_overlap=20,length_function=len)
- chunks = text_splitter.split_text(text)
+text_splitter = CharacterTextSplitter(separator="\n",chunk_size=500,chunk_overlap=20,length_function=len)
+chunks = text_splitter.split_text(text)
 
 # create embeddings
- embeddings = OpenAIEmbeddings()
- knowledge_base = FAISS.from_texts(chunks, embeddings)
+embeddings = OpenAIEmbeddings()
+knowledge_base = FAISS.from_texts(chunks, embeddings)
 
 # show user input
- st.subheader("Escribe que quieres saber sobre el documento")
- user_question = st.text_input(" ")
- if user_question:
+st.subheader("Escribe que quieres saber sobre el documento")
+user_question = st.text_input(" ")
+if user_question:
         docs = knowledge_base.similarity_search(user_question)
 
         llm = OpenAI()
