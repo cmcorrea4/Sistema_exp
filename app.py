@@ -68,7 +68,7 @@ if user_question:
 
         def text_to_speech(text, tld):
                 
-                tts = gTTS(response,"es", tld, slow=False)
+                tts = gTTS(response,"es", "com.mx", slow=False)
                 try:
                     my_file_name = text[0:20]
                 except:
@@ -81,7 +81,7 @@ if user_question:
           result, output_text = text_to_speech(response, 'es')
           audio_file = open(f"temp/{result}.mp3", "rb")
           audio_bytes = audio_file.read()
-          st.markdown(f"## Tú audio:")
+          st.markdown(f"## Escucha:")
           st.audio(audio_bytes, format="audio/mp3", start_time=0)
 
 
