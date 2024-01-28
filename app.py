@@ -59,7 +59,7 @@ user_question = st.text_input(" ")
 if user_question:
         docs = knowledge_base.similarity_search(user_question)
 
-        llm = OpenAI()
+        llm = OpenAI(model_name="gpt-4")
         chain = load_qa_chain(llm, chain_type="stuff")
         with get_openai_callback() as cb:
           response = chain.run(input_documents=docs, question=user_question)
