@@ -27,9 +27,9 @@ st.title('Que deseas Saber de IM ? 💬')
 ke = st.text_input('Ingresa tu Clave')
 #os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 try:
- os.environ['OPENAI_API_KEY'] = ke
+    os.environ['OPENAI_API_KEY'] = ke
 except:
- pass  
+    pass  
 pdfFileObj = open('example.pdf', 'rb')
  
 # creating a pdf reader object
