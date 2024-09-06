@@ -80,7 +80,7 @@ if user_question:
 
     
         if st.button("Escuchar"):
-          result, output_text = text_to_speech(response, 'es')
+          result, output_text = text_to_speech(response, 'es-us')
           audio_file = open(f"temp/{result}.mp3", "rb")
           audio_bytes = audio_file.read()
           st.markdown(f"## Escucha:")
