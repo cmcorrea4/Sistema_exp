@@ -22,7 +22,7 @@ except:
 
 
 
-st.title('Que deseas Saber de IM ? 💬')
+st.title('Que preguntas tienes ? 💬')
 
 ke = st.text_input('Ingresa tu Clave')
 #os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
@@ -55,8 +55,8 @@ embeddings = OpenAIEmbeddings()
 knowledge_base = FAISS.from_texts(chunks, embeddings)
 
 # show user input
-st.subheader("Escribe que quieres saber sobre el documento")
-user_question = st.text_input(" ")
+st.subheader("Usa el campo de texto para hacer tu pregunta")
+user_question = st.text_area(" ")
 if user_question:
         docs = knowledge_base.similarity_search(user_question)
 
