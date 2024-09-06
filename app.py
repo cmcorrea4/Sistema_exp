@@ -22,7 +22,7 @@ except:
 
 
 
-st.title('Que preguntas tienes ? 💬')
+st.title('Sistema Experto conversacional 💬')
 image = Image.open('Instructor.png')
 st.image(image)
 ke = st.text_input('Ingresa tu Clave')
