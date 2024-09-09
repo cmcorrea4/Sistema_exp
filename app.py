@@ -44,7 +44,7 @@ try:
     #os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
     os.environ['OPENAI_API_KEY'] = ke
     
-    pdfFileObj = open('example2.pdf', 'rb')
+    pdfFileObj = open('example3.pdf', 'rb')
      
     # creating a pdf reader object
     pdfReader = PyPDF2.PdfReader(pdfFileObj)
