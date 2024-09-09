@@ -23,6 +23,7 @@ except:
     pass
 
 with st.sidebar:
+    st.subheader("Que es un sistema Experto?")
     st.write(
     """Un sistema experto es un tipo de software diseñado para emular la toma de decisiones 
        de un experto humano en un dominio específico. Estos sistemas utilizan una base de 
