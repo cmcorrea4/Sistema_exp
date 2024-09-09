@@ -22,7 +22,17 @@ try:
 except:
     pass
 
-
+with st.sidebar:
+    st.subheader(
+    """Un sistema experto es un tipo de software diseñado para emular la toma de decisiones 
+       de un experto humano en un dominio específico. Estos sistemas utilizan una base de 
+       conocimientos, que contiene información y reglas sobre un área particular, y un motor 
+       de inferencia que aplica esa información para resolver problemas o hacer recomendaciones. 
+       Los sistemas expertos son capaces de realizar tareas como diagnóstico, planificación y 
+       asesoramiento, y se utilizan en diversas industrias, incluyendo medicina, ingeniería, finanzas 
+       y atención al cliente
+    """
+                )            
 try:
     st.title('Sistema Experto 💬')
     #image = Image.open('Instructor.png')
