@@ -27,7 +27,7 @@ try:
     st.title('Sistema Experto 💬')
     #image = Image.open('Instructor.png')
     #st.image(image)
-    with open('ani_audio.json') as source:
+    with open('Experts.json') as source:
          animation=json.load(source)
     st.lottie(animation,width =350)
     
