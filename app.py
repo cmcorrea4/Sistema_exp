@@ -14,6 +14,8 @@ import glob
 from gtts import gTTS
 import os
 import time
+from streamlit_lottie import st_lottie
+import json
 
 try:
     os.mkdir("temp")
@@ -22,9 +24,13 @@ except:
 
 
 try:
-    st.title('S.E. Conformadora de Talones 💬')
-    image = Image.open('Instructor.png')
-    st.image(image)
+    st.title('Sistema Experto 💬')
+    #image = Image.open('Instructor.png')
+    #st.image(image)
+    with open('ani_audio.json') as source:
+         animation=json.load(source)
+    st.lottie(animation,width =350)
+    
     ke = st.text_input('Ingresa tu Clave')
     #os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
     os.environ['OPENAI_API_KEY'] = ke
