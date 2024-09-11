@@ -43,7 +43,7 @@ try:
     ke = st.text_input('Ingresa tu Clave')
     #os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
     os.environ['OPENAI_API_KEY'] = ke
-    #st.write(k)
+    st.write(key)
     
     pdfFileObj = open('example4.pdf', 'rb')
      
