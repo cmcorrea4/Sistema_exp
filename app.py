@@ -44,7 +44,7 @@ try:
     #os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
     os.environ['OPENAI_API_KEY'] = ke
     
-    #st.write(key)
+    st.write(st.secrets["settings"]["key"])
     
     pdfFileObj = open('example4.pdf', 'rb')
      
