@@ -40,11 +40,11 @@ try:
          animation=json.load(source)
     st.lottie(animation,width =350)
     
-    ke = st.text_input('Ingresa tu Clave')
+    #ke = st.text_input('Ingresa tu Clave')
     #os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
-    os.environ['OPENAI_API_KEY'] = ke
+    os.environ['OPENAI_API_KEY'] = st.secrets["settings"]["key"] #ke
     
-    st.write(st.secrets["settings"]["key"])
+    #st.write(st.secrets["settings"]["key"])
     
     pdfFileObj = open('example4.pdf', 'rb')
      
