@@ -33,7 +33,7 @@ with st.sidebar:
     """
                 )            
 
-st.title('Sistema Experto 💬')
+st.title('Sistema Experto TECNOCUERO💬')
 #image = Image.open('Instructor.png')
 #st.image(image)
 with open('Experts.json') as source:
