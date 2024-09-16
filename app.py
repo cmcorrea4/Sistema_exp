@@ -33,7 +33,7 @@ with st.sidebar:
     """
                 )            
 
-st.title('Sistema Experto TECNOCUERO💬')
+st.title('Sistema Experto CONFORMADORA DE TALONES💬')
 #image = Image.open('Instructor.png')
 #st.image(image)
 with open('Experts.json') as source:
@@ -46,7 +46,7 @@ os.environ['OPENAI_API_KEY'] = st.secrets["settings"]["key"] #ke
 
 #st.write(st.secrets["settings"]["key"])
 
-pdfFileObj = open('example4.pdf', 'rb')
+pdfFileObj = open('example2.pdf', 'rb')
  
 # creating a pdf reader object
 pdfReader = PyPDF2.PdfReader(pdfFileObj)
