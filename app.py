@@ -25,20 +25,18 @@ except:
 with st.sidebar:
     st.subheader("Que es un sistema Experto?")
     st.write(
-    """Un sistema experto es un tipo de software diseñado para emular la toma de decisiones 
-       de un experto humano en un dominio específico. Estos sistemas utilizan una base de 
-       conocimientos, que contiene información y reglas sobre un área particular, y un motor 
-       de inferencia que aplica esa información para resolver problemas o hacer recomendaciones. 
+    """Este sistema experto te resolverá dudas sobre la conformadora de talones.
+       te ayudará a aprender lo básico sobre la máquina.
        
     """
                 )            
 
 st.title('Sistema Experto CONFORMADORA DE TALONES💬')
-#image = Image.open('Instructor.png')
-#st.image(image)
-with open('Experts.json') as source:
-     animation=json.load(source)
-st.lottie(animation,width =350)
+image = Image.open('Instructor.png')
+st.image(image)
+#with open('Experts.json') as source:
+#     animation=json.load(source)
+#st.lottie(animation,width =350)
 
 #ke = st.text_input('Ingresa tu Clave')
 #os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
