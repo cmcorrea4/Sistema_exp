@@ -31,6 +31,7 @@ with st.sidebar:
     """
                 )            
 
+st.set_page_config(layout="wide", theme="dark")
 st.title('Sistema Experto CONFORMADORA DE TALONES💬')
 image = Image.open('Instructor.png')
 st.image(image)
